@@ -1,0 +1,40 @@
+
+ {{!-- {{#if loggedIn}} --}}
+{{#if properties}}
+<div class="container all-properties-cont">
+    <br>
+    <br>
+    <br>
+    <h3>Current properties:</h3>
+    <br>
+    <br>
+    {{#each properties as |property|}}
+    <div class="row flex-row align-items-center justify-content-around">
+        <div class="col-10 property-list">
+            <table class="table .table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Property Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{property.address}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-primary" href="/property/{{property.id}}" role="button">Select property</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<br>
+<br>
+<a class="btn btn-primary" href="/property/update" role="button">Add a Property</a>
+
+{{!-- {{else}}
+<a href="/login">You must login to view Properties</a>
+{{/if}} --}}

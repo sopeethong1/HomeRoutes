@@ -1,0 +1,44 @@
+<br>
+    <br>
+    <br>
+
+
+{{#if property}}
+<div class="container view-properties-cont">
+    <br>
+    <br>
+    <br>
+    <div class="row d-flex justify-content-center">
+        
+        <div class="col-12 col-md-12 property-description">
+            
+            <table data-toggle="table">
+                <thead>
+                  <tr>
+                    <th>Property Address:</th>
+                    <th>Lease Start:</th>
+                    <th>Lease End:</th>
+                    <th>Square Footage:</th>
+                    <th>Property Type:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{property.address}}</td>
+                    <td>{{property.leaseStart}}</td>
+                    <td>{{property.leaseEnd}}</td>
+                    <td>{{property.squareFootage}}</td>
+                    <td>{{property.propertyType}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <br>
+              {{/if}}
+             
+        </div>
+    </div>
+</div>
+
+
+

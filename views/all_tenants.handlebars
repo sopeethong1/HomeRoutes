@@ -1,0 +1,37 @@
+{{#if tenants}}
+<div class="container all-tenants-cont">
+    <br>
+    <br>
+    <br>
+    <h3>Current Tenants:</h3>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="/tenant/create" role="button">Add A Tenant</a>
+    {{#each tenants as |tenant|}}
+    <div class="row flex-row align-items-center justify-content-around">
+        <div class="col-10 tenant-list">
+            <table class="table .table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Tenant Name</th>
+                        <th scope="col">Property Address</th>
+                        <th scope="col">Lease End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{tenant.first_name}} {{tenant.last_name}}</td>
+                        {{!-- pull in prop address --}}
+                        <td>{{property.address}}</td>
+                        <td>{{property.leaseEnd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-primary" href="/tenant/view/{{tenant.id}}" role="button">Select Tenant</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}

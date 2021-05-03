@@ -1,0 +1,46 @@
+<br>
+<br>
+<br>
+{{#if tenants}}
+<div class="container view-tenants-cont">
+  <br>
+  <br>
+  <br>
+  <div class="row d-flex justify-content-center">
+    <div class="col-10 text-center">
+      <h3>Current Tenant:</h3>
+      <br>
+      <br>
+    </div>
+
+    <div class="row flex-row ">
+      <div class="col-12 col-md-12 tenant-list">
+ {{#each tenants as |tenant|}}
+        <table class="table .table-bordered ">
+          <thead>
+            <tr>
+              <th scope="col">Tenant Name</th>
+              <th scope="col">Tenant Phone</th>
+              <th scope="col">Emergency Contact Name</th>
+              <th scope="col">Emergency Contact Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{tenant.first_name}} {{tenant.last_name}}</td>
+              <td>{{tenant.phone_number}}</td>
+              <td>{{tenant.emer_contact_name}}</td>
+              <td>{{tenant.emer_contact_phone}}</td>
+            </tr>
+            <a class="btn btn-primary" href="/tenant/update/{{tenant.id}}" role="button">Update Tenant</a>
+            <a class="btn btn-danger" id="delete" role="button">Delete Tenant</a>
+          </tbody>
+        </table>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/if}}
+  
+  <script src="/js/delete_tenant.js"></script>
